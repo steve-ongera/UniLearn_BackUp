@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 {% load course_tags %}
 {% block title %}{{course.title}}{% endblock  %}
 {% block content %}
@@ -213,22 +214,9 @@
                 </div>
 
                 <div id="Instructor" class="mb-8">
-                    <ul class="nav course-tab-v1 border-bottom h4 mb-8">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#Overview" data-bs-toggle="smooth-scroll" data-bs-offset="0">Overview</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#Curriculum" data-bs-toggle="smooth-scroll" data-bs-offset="0">Curriculum</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#Instructor" data-bs-toggle="smooth-scroll" data-bs-offset="0">Instructor</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#Reviews" data-bs-toggle="smooth-scroll" data-bs-offset="0">Reviews</a>
-                        </li>
-                    </ul>
+                   
 
-                    <h3 class="mb-6">About the instructor</h3>
+                    <h3 class="mb-6">About  the instructor</h3>
 
                     <div class="d-flex align-items-center mb-6">
                         <div class="d-inline-block rounded-circle border me-6 p-2">
@@ -657,7 +645,7 @@
                         <ul class="list-unstyled mb-0">
                             <li class="media mb-6 d-flex">
                                 <a href="course-single-v5.html" class="w-100p d-block me-5">
-                                    <img src="assets/img/photos/photo-1.jpg" alt="..." class="avatar-img rounded-lg h-90p w-100p">
+                                    <img src="{% static 'assets/img/photos/photo-1.jpg'%}" alt="..." class="avatar-img rounded-lg h-90p w-100p">
                                 </a>
                                 <div class="media-body flex-grow-1">
                                     <a href="course-single-v5.html" class="d-block">
@@ -670,7 +658,7 @@
 
                             <li class="media mb-6 d-flex">
                                 <a href="course-single-v5.html" class="w-100p d-block me-5">
-                                    <img src="assets/img/photos/photo-2.jpg" alt="..." class="avatar-img rounded-lg h-90p w-100p">
+                                    <img src="{% static 'assets/img/photos/photo-2.jpg'%}" alt="..." class="avatar-img rounded-lg h-90p w-100p">
                                 </a>
                                 <div class="media-body flex-grow-1">
                                     <a href="course-single-v5.html" class="d-block">
@@ -683,7 +671,7 @@
 
                             <li class="media mb-6 d-flex">
                                 <a href="course-single-v5.html" class="w-100p d-block me-5">
-                                    <img src="assets/img/photos/photo-14.jpg" alt="..." class="avatar-img rounded-lg h-90p w-100p">
+                                    <img src="{% static 'assets/img/photos/photo-14.jpg'%}" alt="..." class="avatar-img rounded-lg h-90p w-100p">
                                 </a>
                                 <div class="media-body flex-grow-1">
                                     <a href="course-single-v5.html" class="d-block">
@@ -696,7 +684,7 @@
 
                             <li class="media mb-6 d-flex">
                                 <a href="course-single-v5.html" class="w-100p d-block me-5">
-                                    <img src="assets/img/photos/photo-16.jpg" alt="..." class="avatar-img rounded-lg h-90p w-100p">
+                                    <img src="{% static 'assets/img/photos/photo-16.jpg'%}" alt="..." class="avatar-img rounded-lg h-90p w-100p">
                                 </a>
                                 <div class="media-body flex-grow-1">
                                     <a href="course-single-v5.html" class="d-block">
