@@ -113,6 +113,9 @@ def COURSE_DETAILS(request, slug):
         except UserCourse.DoesNotExist:
             check_enroll = None
 
+    # Get the latest 5 courses
+    latest_courses = Course.objects.all().order_by('-created_at')[:5]        
+
     course = Course.objects.filter(slug=slug)
     if course.exists():
         course = course.first()
@@ -124,6 +127,7 @@ def COURSE_DETAILS(request, slug):
         'category': category,
         'time_duration': time_duration,
         'check_enroll': check_enroll,
+        'latest_courses': latest_courses,  # Pass the latest courses to the template
     }
     return render(request, 'course/course_details.html', context)
 
