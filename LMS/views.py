@@ -7,6 +7,7 @@ from django.db.models import Sum
 from django.contrib import messages
 from django.contrib.auth.models import AnonymousUser
 from django.contrib.auth.decorators import login_required
+from app.forms import ContactForm
 
 
 def BASE(request):
@@ -71,9 +72,21 @@ def filter_data(request):
 def CONTACT_US(request):
     category = Categories.get_all_category(Categories)
 
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            # Redirect to a 'thank you' page or send a success message after form submission
+            messages.success(request, 'Thank you for contacting us! We will get back to you soon.')
+            return redirect('contact_us')  # Change 'thank_you' to the actual URL name of the page
+    else:
+        form = ContactForm()
+
     context = {
         'category': category,
+        'form': form,
     }
+    
     return render(request, 'Main/contact_us.html', context)
 
 def ABOUT_US(request):
